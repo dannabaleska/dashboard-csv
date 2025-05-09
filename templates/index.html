@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard de Visualización de Datos CSV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Spline+Sans+Mono:wght@400;500;600&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="grano"></div>
+
+  <header class="cabecera">
+    <div class="cabecera-marca">
+      <span class="logo-marca">CSV<span class="logo-punto">.</span>viz</span>
+      <span class="cabecera-sub">Dashboard de Visualización de Datos</span>
+    </div>
+    <div class="cabecera-tag">Lenguajes de Programación · 6º Semestre · Proyecto 02</div>
+  </header>
+
+  <main class="contenedor">
+
+    <!-- Zona de carga -->
+    <section class="panel panel-carga" id="zonaCarga">
+      <div class="carga-interior" id="dropZone">
+        <div class="carga-icono">↑</div>
+        <h2 class="carga-titulo">Arrastra tu archivo CSV aquí</h2>
+        <p class="carga-texto">o selecciónalo manualmente · máximo 5 MB</p>
+        <label class="boton boton-primario">
+          Seleccionar archivo
+          <input type="file" id="inputArchivo" accept=".csv" hidden>
+        </label>
+        <p class="carga-hint">Soporta delimitadores: coma, punto y coma, tabulador y pipe</p>
+      </div>
+      <div class="carga-estado" id="cargaEstado"></div>
+    </section>
+
+    <!-- Resumen del archivo -->
+    <section class="panel oculto" id="panelResumen">
+      <div class="resumen-grid">
+        <div class="resumen-item">
+          <span class="resumen-label">Archivo</span>
+          <span class="resumen-valor" id="resArchivo">—</span>
+        </div>
+        <div class="resumen-item">
+          <span class="resumen-label">Filas</span>
+          <span class="resumen-valor" id="resFilas">—</span>
+        </div>
+        <div class="resumen-item">
+          <span class="resumen-label">Columnas</span>
+          <span class="resumen-valor" id="resColumnas">—</span>
+        </div>
+        <div class="resumen-item">
+          <span class="resumen-label">Delimitador</span>
+          <span class="resumen-valor" id="resDelim">—</span>
+        </div>
+        <div class="resumen-item">
+          <span class="resumen-label">Encoding</span>
+          <span class="resumen-valor" id="resEncoding">—</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estadísticas por columna -->
+    <section class="panel oculto" id="panelEstadisticas">
+      <h2 class="seccion-titulo">Estadísticas por columna</h2>
+      <div class="tabla-scroll">
+        <table class="tabla-stats" id="tablaStats">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Configuración de gráfica -->
+    <section class="panel oculto" id="panelGrafica">
+      <h2 class="seccion-titulo">Generador de gráficas</h2>
+      <div class="controles">
+        <div class="control">
+          <label class="control-label">Tipo de gráfica</label>
+          <select id="selTipo" class="select">
+            <option value="bar">Barras</option>
+            <option value="line">Líneas</option>
+            <option value="pie">Pastel</option>
+            <option value="scatter">Dispersión</option>
+          </select>
+        </div>
+        <div class="control">
+          <label class="control-label" id="lblEjeX">Eje X (categoría)</label>
+          <select id="selEjeX" class="select"></select>
+        </div>
+        <div class="control">
+          <label class="control-label" id="lblEjeY">Eje Y (valor numérico)</label>
+          <select id="selEjeY" class="select"></select>
+        </div>
+        <div class="control control-boton">
+          <button class="boton boton-primario" id="btnGenerar">Generar gráfica</button>
+        </div>
+      </div>
+
+      <div class="grafica-wrap">
+        <canvas id="lienzo"></canvas>
+      </div>
+
+      <div class="grafica-acciones">
+        <button class="boton boton-secundario" id="btnExportar" disabled>Exportar como PNG</button>
+      </div>
+    </section>
+
+    <!-- Vista previa de datos -->
+    <section class="panel oculto" id="panelDatos">
+      <h2 class="seccion-titulo">Vista previa de datos <span class="seccion-nota">(primeras 20 filas)</span></h2>
+      <div class="tabla-scroll">
+        <table class="tabla-datos" id="tablaDatos">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    Dashboard CSV · Proyecto académico · Flask + Chart.js
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>
