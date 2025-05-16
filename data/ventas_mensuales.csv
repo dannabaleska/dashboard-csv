@@ -1,0 +1,13 @@
+mes,categoria,ventas,unidades,fecha_corte
+Enero,Lubricantes,4520.50,180,2024-01-31
+Febrero,Lubricantes,3890.00,155,2024-02-29
+Marzo,Lubricantes,5120.75,210,2024-03-31
+Abril,Rodamientos,2780.40,95,2024-04-30
+Mayo,Rodamientos,3340.00,112,2024-05-31
+Junio,Grasas,1980.25,88,2024-06-30
+Julio,Grasas,2210.00,99,2024-07-31
+Agosto,Pernos,1450.80,520,2024-08-31
+Septiembre,Pernos,1670.50,610,2024-09-30
+Octubre,Aceites,4980.00,240,2024-10-31
+Noviembre,Aceites,5340.60,265,2024-11-30
+Diciembre,Aceites,6120.00,310,2024-12-31
