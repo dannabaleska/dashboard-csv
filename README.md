@@ -1,6 +1,6 @@
 # Dashboard de Visualización de Datos CSV
 
-**Materia:** Lenguajes de Programación · 6º Semestre
+**Materia:** Lenguajes de Programación
 **Proyecto 02 — Propuesta de Proyectos Finales**
 
 Aplicación web que permite cargar un archivo CSV, detectar automáticamente sus columnas y tipos de datos, calcular estadísticas básicas y generar gráficas interactivas configurables por el usuario (barras, líneas, pastel y dispersión).
@@ -18,13 +18,13 @@ Parsear CSV con diferentes **delimitadores** (coma, punto y coma, tabulador, pip
 
 ## 2. Funcionalidades
 
-- ✅ Carga y parseo de archivos CSV de hasta **5 MB** (con drag & drop).
-- ✅ Detección automática del **delimitador** y del **encoding**.
-- ✅ Detección automática de **tipos de columna**: numérico, texto, fecha.
-- ✅ **Estadísticas básicas** por columna: media, mediana, mínimo, máximo, conteo y valores únicos.
-- ✅ Selector de **tipo de gráfica** (barras, líneas, pastel, dispersión) y ejes configurables.
-- ✅ **Exportación** del gráfico como imagen **PNG**.
-- ✅ Vista previa de las primeras 20 filas de datos.
+- Carga y parseo de archivos CSV de hasta **5 MB** (con drag & drop).
+- Detección automática del **delimitador** y del **encoding**.
+- Detección automática de **tipos de columna**: numérico, texto, fecha.
+- **Estadísticas básicas** por columna: media, mediana, mínimo, máximo, conteo y valores únicos.
+- Selector de **tipo de gráfica** (barras, líneas, pastel, dispersión) y ejes configurables.
+- **Exportación** del gráfico como imagen **PNG**.
+- Vista previa de las primeras 20 filas de datos.
 
 ---
 
@@ -69,7 +69,7 @@ Requisitos previos: **Python 3.10 o superior**.
 
 ```bash
 # 1. Clonar el repositorio
-git clone <URL-del-repositorio>
+git clone <https://github.com/dannabaleska/dashboard-csv>
 cd dashboard-csv
 
 # 2. (Opcional) Crear entorno virtual
@@ -121,8 +121,10 @@ Pasos en la aplicación:
 
 ## 9. Autores
 
-> _Completar con los integrantes del equipo (2 a 5):_
->
-> - Nombre 1
-> - Nombre 2
-> - ...
+> _integrantes del equipo:_
+> - Alvarez Salazar Danna Baleska
+> - Coello Cercado Cesar Daniel
+> - Garcia Alvarado Anthony David
+> - Fajardo Mayorga Emerson Onias
+> - Moran Huancayo Valeska Domenica 
+
